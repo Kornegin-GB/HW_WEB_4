@@ -135,12 +135,13 @@ $workExperience = [
                      <h6 class="w3-text-teal">
                         <i class="fa fa-calendar fa-fw w3-margin-right"></i>
                         <?= $workExperience[$i]["beginning"]; ?> -
-                        <span <?php
-                              if ($workExperience[$i]["ending"] == "Настоящее время")
-                                 echo "class=\"w3-tag w3-teal w3-round\"";
-                              ?>>
+                        <?php if ($workExperience[$i]["ending"] == "Настоящее время") : ?>
+                           <span class="w3-tag w3-teal w3-round">
+                              <?= $workExperience[$i]["ending"]; ?>
+                           </span>
+                        <?php else : ?>
                            <?= $workExperience[$i]["ending"]; ?>
-                        </span>
+                        <?php endif; ?>
                      </h6>
                      <p>
                         <?= $workExperience[$i]["duties"]; ?>
